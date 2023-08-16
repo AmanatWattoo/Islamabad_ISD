@@ -20,7 +20,7 @@ const Signin = () => {
             <Input type="password" placeholder="Provide your password" maxLength={8}/>
             <div className="py-2 flex justify-center">
                 <Link href={""} >
-                <Button>Signup</Button>
+                <Button>Signin</Button>
                 </Link>
             </div>   
         </div>
