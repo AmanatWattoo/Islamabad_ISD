@@ -27,7 +27,7 @@ const Signup = () => {
             </div>   
         </div>
         <div>
-            <p>If already have account <Link href={"/signin"}> click here </Link></p>
+            <p>If already have  an account <Link className='text-blue-900 underline' href={"/signin"}> click here </Link></p>
         </div>
     </div>
   )
