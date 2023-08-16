@@ -1,3 +1,4 @@
+import { Label } from '@/components/ui/label'
 import React from 'react'
 
 const Signup = () => {
@@ -8,8 +9,8 @@ const Signup = () => {
             <p>Signup</p>
         </div>
         <div>
-            <p>Detail</p>
-            
+            <Label></Label>
+
         </div>
 
     </div>
