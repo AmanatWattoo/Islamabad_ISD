@@ -71,6 +71,11 @@ module.exports = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
     },
+    fontFamily:{
+      mainlog:"'Dancing Script', cursive",
+      heading:"'Roboto Slab', serif;"
+    }
+
   },
   plugins: [require("tailwindcss-animate")],
 }
