@@ -5,8 +5,8 @@ const Signin = () => {
     <div className="h-screen bg-black/[0.10]">
     <div className="font-heading flex justify-center items-center">
         <div className="flex bg-gray-400/[0.30] mt-[10rem] w-[35rem] py-4 rounded-[5rem] shadow-xl z-10 flex-col justify-center items-center ">
-        <div className="">
-            <h1 >Welcome to JWT Authentication</h1>
+        <div className="max-w-[35rem]">
+            <h1 className='text-2xl'>Welcome to JWT Authentication</h1>
             <p className="text-orange-400 text-3xl font-mainlog font-semibold items-start text-start">Signin</p>
         </div>
         <div className="flex flex-col py-4 space-y-2 w-[30rem]">
