@@ -10,7 +10,7 @@ const Signup = () => {
     <div className="font-heading flex justify-center items-center">
         <div className="flex bg-gray-400/[0.30] mt-[6rem] w-[35rem] py-4 rounded-[5rem] shadow-xl z-10 flex-col justify-center items-center ">
         <div className="">
-            <h1 >Welcome to JWT Authenctication</h1>
+            <h1 >Welcome to JWT Authentication</h1>
             <p className="text-orange-400 text-3xl font-mainlog font-semibold items-start text-start">Signup</p>
         </div>
         <div className="flex flex-col py-4 space-y-2 w-[30rem]">
