@@ -1,10 +1,5 @@
 
 import Link from "next/link"
-import { Label } from "../components/ui/label"
-import { Input } from "../components/ui/input"
-import { Button } from "../components/ui/button"
-
-
 const Signin = () => {
   return (
     <div className="h-screen bg-black/[0.10]">
@@ -15,13 +10,13 @@ const Signin = () => {
             <p className="text-orange-400 text-3xl font-mainlog font-semibold items-start text-start">Signin</p>
         </div>
         <div className="flex flex-col py-4 space-y-2 w-[30rem]">
-            <Label>Email:</Label>
-            <Input className="" type='email' placeholder='Enter here your email'/>
-            <Label>Password:</Label>
-            <Input type="password" placeholder="Provide your password" maxLength={8}/>
+            <label>Email:</label>
+            <input className="" type='email' placeholder='Enter here your email'/>
+            <label>Password:</label>
+            <input type="password" placeholder="Provide your password" maxLength={8}/>
             <div className="py-2 flex justify-center">
                 <Link href={""} >
-                <Button>Signin</Button>
+                <button>Signin</button>
                 </Link>
             </div>   
         </div>

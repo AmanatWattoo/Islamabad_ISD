@@ -1,9 +1,6 @@
 
 import Link from "next/link";
 import React from "react";
-import { Label } from "../components/ui/label";
-import { Input } from "../components/ui/input";
-import { Button } from "../components/ui/button";
 
 const Signup = () => {
   return (
@@ -15,17 +12,17 @@ const Signup = () => {
             <p className="text-orange-400 text-3xl font-mainlog font-semibold items-start text-start">Signup</p>
         </div>
         <div className="flex flex-col py-4 space-y-2 w-[30rem]">
-            <Label>Username:</Label>
-            <Input className="" type='text' placeholder='Enter here your name'/>
-            <Label>Email:</Label>
-            <Input className="" type='email' placeholder='Enter here your email'/>
-            <Label>Password:</Label>
-            <Input type="password" placeholder="Provide your password" maxLength={8}/>
-            <Label> Confirm Password:</Label>
-            <Input type="password" placeholder="Enter again password" maxLength={8}/>
+            <label>Username:</label>
+            <input className="" type='text' placeholder='Enter here your name'/>
+            <label>Email:</label>
+            <input className="" type='email' placeholder='Enter here your email'/>
+            <label>Password:</label>
+            <input type="password" placeholder="Provide your password" maxLength={8}/>
+            <label> Confirm Password:</label>
+            <input type="password" placeholder="Enter again password" maxLength={8}/>
             <div className="py-2 flex justify-center">
                 <Link href={""} >
-                <Button>Signup</Button>
+                <button>Signup</button>
                 </Link>
             </div>   
         </div>
