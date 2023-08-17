@@ -26,7 +26,7 @@ const Signin = () => {
         </div>
         <div>
         <p>If forgot the password <Link className='text-blue-900 underline' href={""}> click here    </Link></p>
-        <p>If don't have an account  an account <Link className='text-blue-900 underline' href={"/signup"}> click here </Link></p>
+        <p>If don't have an account <Link className='text-blue-900 underline' href={"/signup"}> click here </Link></p>
 
         </div>
         </div>
