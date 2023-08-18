@@ -1,11 +1,11 @@
 import { sql } from "@vercel/postgres";
-import { varchar } from "drizzle-orm/pg-core";
+import {varchar } from "drizzle-orm/pg-core";
 import { pgTable } from "drizzle-orm/pg-core";
 import { drizzle } from "drizzle-orm/vercel-postgres";
 
 export const UserSignUp = pgTable(
     "signup",{
-        Name:varchar("Name").notNull(),
+        Name:varchar("Name").notNull(),  	
         Email: varchar("Email").notNull(),
         Password: varchar("Password").notNull(),
     }
