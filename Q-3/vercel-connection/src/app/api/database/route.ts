@@ -16,3 +16,13 @@ export const POST =async(request:NextRequest)=>{
         console.log(error,"There is an erro to post the data")
     }
 }
+export const GET = async(request:NextRequest)=>{
+    const req = await request.nextUrl
+    try{
+        const res = await db.select().from(UserSignUp)
+            
+           console.log(res)
+    } catch (error) {
+        
+    }
+}

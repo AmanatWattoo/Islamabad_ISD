@@ -6,7 +6,7 @@ import { drizzle } from "drizzle-orm/vercel-postgres";
 export const UserSignUp = pgTable(
     "signup",{
         Name:varchar("Name").notNull(),  	
-        Email: varchar("Email").notNull(),
+        Email: varchar("Email").primaryKey(),
         Password: varchar("Password").notNull(),
     }
 )

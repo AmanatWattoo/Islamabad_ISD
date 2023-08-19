@@ -1,6 +1,7 @@
-import { navDataType } from '@/app/utils/navbar'
+
 import React, { FC } from 'react'
 import Link from 'next/link'
+import { navDataType } from './navdata'
 const DropDown:FC<{item:navDataType}> = ({item}) => {
   return (
     <ul>

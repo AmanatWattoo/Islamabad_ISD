@@ -6,7 +6,7 @@ import {TiShoppingCart} from 'react-icons/ti'
 const Hero = () => {
   const btntext ="Start \n Shoping"
     return (
-    <div className="px-10 flex justify-between items-center">
+    <div className="px-10 flex md:flex-row flex-col justify-between items-center">
       {/* -----------Right Side ---------------- */}
       <div>
         <div className="space-y-5 max-w-sm">
