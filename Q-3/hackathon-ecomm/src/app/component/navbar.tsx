@@ -1,72 +1,139 @@
 'use client'
 import React, { useState } from 'react';
-import { NavbarData } from '@/app/component/navbardata';
+import { NavbarData, NavbarDataType } from './navbardata';
 import { IoMdArrowDropdown } from 'react-icons/io';
-import { AiFillHome } from 'react-icons/ai';
-import { GrUserManager } from 'react-icons/gr';
-import { GiFemaleVampire } from 'react-icons/gi';
-import { FaChild } from 'react-icons/fa';
-import Link from 'next/link';
+import {BiSearch} from 'react-icons/bi'
+import {BsCart2} from 'react-icons/bs'
+import MobileSubDrop from './mobilenav';
+import { GrClose } from 'react-icons/gr';
+import { GiHamburgerMenu } from 'react-icons/gi';
+interface NavbarProps {}
 
-const Navbar: React.FC = () => {
-  const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
-  function resolveIcon(iconName: string | undefined) {
-    switch (iconName) {
-      case 'AiFillHome':
-        return <AiFillHome />;
-      case 'GrUserManager':
-        return <GrUserManager />;
-      case 'GiFemaleVampire':
-        return <GiFemaleVampire />;
-      case 'FaChild':
-        return <FaChild />;
-      // Add cases for other icons
-      default:
-        return null; // Return a default component or null
-    }
-  }
+const Navebar: React.FC<NavbarProps> = () => {
+  const [openDropdown, setOpenDropdown] = useState<string | null | boolean>(null);
+  const [cartItemCount, setCartItemCount] = useState(5)
+  const handleDropdownToggle = (title: string) => {
+    setOpenDropdown(openDropdown === title ? null : title);
+  };
 
-  return (
-    <nav className="flex">
-      <div onClick={() => setIsMobileNavOpen(!isMobileNavOpen)}>
-        <IoMdArrowDropdown />
-      </div>
-      <ul className={`navbar-list ${isMobileNavOpen ? 'active' : ''}`}>
-        {NavbarData.map((item, index) => (
-          <li key={index} className="flex">
-            <Link href={item.href} className="navbar-link">
-              {resolveIcon(item.icon)}
+  const handleDropdownMouseLeave = () => {
+    setOpenDropdown(null);
+  };
+  // dropdown items
+  const renderDropdown = (items: NavbarDataType[]) => {
+    return (
+      <div>
+      <ul
+        className=" absolute rounded-md shadow-md"
+        onMouseLeave={handleDropdownMouseLeave}
+      >
+        {items.map((item, index) => (
+          <li key={index} className=" px-4 py-2 border-t w-[10rem] hover:bg-black/[0.05] ">
+            <a href={item.href} className="">
               {item.title}
-              {item.isDropdown && <IoMdArrowDropdown />}
-            </Link>
-            {item.isDropdown && (
-              <ul className="flex">
-                {item.dropdownItems?.map((subItem, subIndex) => (
-                  <li key={subIndex} className="">
-                    <Link href={subItem.href} className="flex flex-col">
-                      {subItem.title}
-                      {subItem.isDropdown && <IoMdArrowDropdown />}
-                    </Link>
-                    {subItem.isDropdown && (
-                      <ul className="flex">
-                        {subItem.dropdownItems?.map((nestedItem, nestedIndex) => (
-                          <li key={nestedIndex} className="flex">
-                            <Link href={nestedItem.href} className="">
-                              {nestedItem.title}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            )}
+            </a>
           </li>
         ))}
       </ul>
+      </div>
+    );
+  };
+
+  const renderNavbarItem = (item: NavbarDataType) => {
+    if (item.isDropdown && item.dropdownItems) {
+      return (
+        <li key={item.title} className="relative group">
+          <button
+            className="flex items-center px-4 py-2 hover:bg-gray-100"
+            onMouseEnter={() => handleDropdownToggle(item.title)}
+          >
+            <div className='mr-2'>
+              {item.icon && <item.icon />}
+            </div>
+            <span>{item.title}</span>
+            <IoMdArrowDropdown className="ml-auto -rotate-90 group-hover:rotate-0 duration-300 " />
+          </button>
+          
+          {openDropdown === item.title && renderDropdown(item.dropdownItems)}
+        </li>
+      );
+    } else {
+      return (
+        // items who don't have dropdown items. 
+        <li key={item.title}>
+          <a href={item.href} className="flex items-center px-4 py-2">
+            <div className='mr-2'>
+              {item.icon && <item.icon />}
+            </div>
+            <span>{item.title}</span>
+          </a>
+        </li>
+      );
+    }
+  };
+// Navbar outer items section
+  return (
+    <div className='sticky top-0'>
+    <nav className="bg-black/[0.05] font-semibold">
+      <ul className="flex justify-around">
+        <div >
+          <h1 className='py-2 font-urdu text-orange-400 font-medium'>وٹو سپر مارکیٹ</h1>
+        </div>
+        {NavbarData.map((item) => renderNavbarItem(item))}
+        <div className=" bg-white border-2 flex border-1 items-center text-gray-600 rounded-md ">
+          
+          <input
+            type="text"
+            placeholder="Search Item here"
+            className=" focus:outline-none w-90 px-6 items-center pl-1 mx-3 py-1 pr-2 flex-grow "
+          />
+          <div className='mr-5'>
+          <BiSearch size={25} />
+          </div>
+        </div>
+        <div className=" relative flex justify-center rounded-full w-11 h-11 items-center bg-orange-300/[0.35] flex-shrink-0 ">
+          <div
+            className="absolute top-1 font-light right-2 
+            text-xs bg-red-500 text-white rounded-full 
+            h-4 w-4 flex justify-center"
+          >
+            {cartItemCount}
+          </div>
+          <BsCart2 size={25} />
+        </div>
+        {/*-------------------- Mobile View Section------------- */}
+      <div onClick={()=>setOpenDropdown(!openDropdown)} className='lg:hidden' >
+          {openDropdown? (<div className='flex lg:hidden'>
+            <GrClose size={25}/>
+          </div>)
+          :
+           (<div className='flex lg:hidden'>
+            <GiHamburgerMenu size={35}/>
+           </div>)
+           }
+        </div>
+      </ul>
+      <div className='lg:hidden'>
+        {openDropdown && <Mobileview/>} 
+      </div>
     </nav>
+    </div>
   );
 };
 
-export default Navbar;
+export default Navebar;
+
+const Mobileview = () => {
+  return (
+    <div>
+      <div>
+        {NavbarData.map((item:NavbarDataType, index:number)=>{
+          return(
+            <MobileSubDrop key={index} item={item}/>
+          )
+        })}
+      </div>
+    </div>
+  );
+};
+

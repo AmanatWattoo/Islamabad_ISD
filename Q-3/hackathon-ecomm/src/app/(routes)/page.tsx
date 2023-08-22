@@ -2,7 +2,7 @@ import React from 'react'
 
 const Homepage = () => {
   return (
-    <div>Homepage</div>
+    <div className='h-[50rem]'>Homepage</div>
   )
 }
 

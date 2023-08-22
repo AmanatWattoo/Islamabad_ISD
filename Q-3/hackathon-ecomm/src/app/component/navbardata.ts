@@ -3,11 +3,11 @@ import { GrUserManager } from 'react-icons/gr';
 import { GiFemaleVampire } from 'react-icons/gi';
 import { FaChild } from 'react-icons/fa';
 import {IoMdArrowDropdown} from'react-icons/io';
-interface NavbarDataType {
+export interface NavbarDataType {
   title: string;
   href: string;
-  icon?: string;
-  dropicon?: string;
+  icon?: React.ComponentType
+  dropicon?: React.ComponentType;
   isDropdown?: boolean;
   dropdownItems?: NavbarDataType[]; // Add nested dropdown items
 }
