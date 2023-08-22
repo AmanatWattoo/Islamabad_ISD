@@ -4,8 +4,9 @@ import Link from 'next/link'
 
 const Footer = () => {
   return (
-    <div className='bg-white border-t flex flex-col'>
+    <div className='bg-black/[0.01] border-t-2 flex flex-col'>
      {/*--------------------- offices section--------------- */}
+    
      <div className='flex justify-evenly'>
         {Branches.map((item:BranchesDataType,index:number)=>{
             const IconComponent = item.icon

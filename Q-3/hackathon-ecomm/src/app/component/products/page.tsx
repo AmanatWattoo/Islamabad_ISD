@@ -102,7 +102,7 @@ const Product = () => {
         </h3>
       </div>
       
-      <div className="flex justify-evenly gap-4 py-4">
+      <div className="flex justify-evenly gap-4 mb-6 py-4">
         {/* --------------1st item--------------- */}
         <div className="bg-cat3 h-80">
           <Image src={"/blackshirt.png"} alt="Black Shirt Image"
@@ -113,7 +113,7 @@ const Product = () => {
         </div>
         </div>
         {/* ----------------------Second Item----------- */}
-        <div className="bg-cat3 max-h-[30rem] py-8 ">
+        <div className=" bg-cat3 h-[30rem] py-8 ">
         <div>
           <Image src={"/header.webp"} alt="Main Image" height={450} width={465}/>
         </div>
