@@ -1,8 +1,11 @@
 import React from 'react'
+import HeroSection from '../component/herosection/page'
 
 const Homepage = () => {
   return (
-    <div className='h-[50rem]'>Homepage</div>
+    <div >
+      <HeroSection/>
+      </div>
   )
 }
 

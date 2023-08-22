@@ -73,7 +73,7 @@ const Navebar: React.FC<NavbarProps> = () => {
   };
 // Navbar outer items section
   return (
-    <div className='sticky top-0'>
+    <div className='sticky top-0  backdrop-blur-sm group-hover:bg-green-800/[0.05]'>
     <nav className="bg-black/[0.05] font-semibold">
       <ul className="flex justify-around">
         <div >

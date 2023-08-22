@@ -17,6 +17,10 @@ module.exports = {
     },
     extend: {
       colors: {
+        cat1:"#D6D6D8",
+        cat4:"#212121",
+        cat2:"#EFE1C7",
+        cat3:"#D7D7D9",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
