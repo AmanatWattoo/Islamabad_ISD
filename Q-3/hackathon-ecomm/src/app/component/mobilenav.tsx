@@ -26,7 +26,9 @@ const MobileSubDrop: FC<{item:NavbarDataType}> = ({item}) => {
       <div className="flex flex-col rounded-md bg-black/[0.05] ">     
          {mobileNavSub &&
         item.dropdownItems?.map((subitem:NavbarDataType, index: number) => (
-          <div className="hover:bg-green-900/[0.20] text-gray-500 font-medium  w-full rounded-md px-5 flex border-t-2" key={index}>
+          <div className="hover:bg-green-900/[0.20] text-gray-500 
+          font-medium 
+           w-full rounded-md px-5 flex border-t-2" key={index}>
             <Link href={subitem.href}>{subitem.title}</Link>
           </div>
         ))}

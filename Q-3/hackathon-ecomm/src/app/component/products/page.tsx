@@ -104,10 +104,14 @@ const Product = () => {
       
       <div className="flex justify-evenly gap-4 mb-6 py-4">
         {/* --------------1st item--------------- */}
-        <div className="bg-cat3 h-80">
-          <Image src={"/blackshirt.png"} alt="Black Shirt Image"
-          height={450} width={450} />
-        <div className=" flex-col py-3 font-medium text-xl text-center justify-center">
+        <div className=' flex flex-col'>
+        <div className="bg-cat2 flex-grow-0 flex flex-col justify-center">
+          <div className='w-[30rem] flex justify-center '>
+          <img src={"/event2.webp"} alt="Black Shirt Image"
+           height={250} width={385} />
+           </div>
+        </div>
+        <div className=" flex-col py-4 font-medium text-xl text-center justify-center">
           <h2>Brushed Roglan Sweatshirt</h2>
           <p>$450</p>
         </div>
