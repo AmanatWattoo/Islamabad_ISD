@@ -58,9 +58,14 @@ export const product = {
             ]
         }),
         defineField({
-            name:'Detail',
+            name:'detail',
             title:'Product Detail',
-            type:'string',
+            type:'array',
+            of:[
+                {
+                    type:'string'
+                }
+            ]
         }),
         {
             name:'Price',
