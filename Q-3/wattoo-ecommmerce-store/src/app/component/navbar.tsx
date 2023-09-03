@@ -7,6 +7,7 @@ import {BsCart2} from 'react-icons/bs'
 import MobileSubDrop from './mobilenav';
 import { GrClose } from 'react-icons/gr';
 import { GiHamburgerMenu } from 'react-icons/gi';
+import Link from 'next/link';
 interface NavbarProps {}
 
 const Navebar: React.FC<NavbarProps> = () => {
@@ -28,7 +29,7 @@ const Navebar: React.FC<NavbarProps> = () => {
         onMouseLeave={handleDropdownMouseLeave}
       >
         {items.map((item, index) => (
-          <li key={index} className=" px-4 py-2 border-t w-[10rem] hover:bg-black/[0.05] ">
+          <li key={index} className=" px-4 py-2 border-t w-[10rem] hover:bg-black bg-orange-400 ">
             <a href={item.href} className="">
               {item.title}
             </a>
@@ -61,24 +62,28 @@ const Navebar: React.FC<NavbarProps> = () => {
       return (
         // items who don't have dropdown items. 
         <li key={item.title}>
-          <a href={item.href} className="flex items-center px-4 py-2">
+          <Link href={item.href} className="flex items-center px-4 py-2">
             <div className='mr-2'>
               {item.icon && <item.icon />}
             </div>
             <span>{item.title}</span>
-          </a>
+          </Link>
         </li>
       );
     }
   };
 // Navbar outer items section
   return (
-    <div className='sticky top-0  backdrop-blur-sm group-hover:bg-green-800/[0.05]'>
-    <nav className="bg-black/[0.05] font-semibold">
-      <ul className="flex justify-around">
+    <div className='sticky top-0  backdrop-blur-sm group-hover:bg-green-800/[0.05] text-white '>
+    <nav className="bg-black/[0.80] font-semibold">
+      <ul className="flex justify-around ">
+      <Link href={"/"}>
         <div >
-          <h1 className='py-2 font-urdu text-orange-400 font-medium'>وٹو سپر مارکیٹ</h1>
+          <h1 className='py-2 font-urdu text-orange-400
+           font-medium'>وٹو سپر مارکیٹ</h1>
+          
         </div>
+        </Link>
         {NavbarData.map((item) => renderNavbarItem(item))}
         <div className=" bg-white border-2 flex border-1 items-center text-gray-600 rounded-md ">
           
