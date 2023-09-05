@@ -5,6 +5,7 @@ import { urlForImage } from '../../../../../sanity/lib/image'
 
 export async function generateStaticParams(){
   const data = await FetchData()
+  
   //hamar page slug ki base bane to mapping krwa lete hn 
   return data.map((item:any)=>(
     //name of file within square brackets upon which a new page is generated
@@ -14,7 +15,7 @@ export async function generateStaticParams(){
 }
 
 
-const page = async ({params}:{params:any}) => {
+const Page = async ({params}:{params:any}) => {
   const data = await FetchData()
   // console.log("value of parms", params)
   const filterdata = data.find((item:any)=> 
@@ -28,7 +29,7 @@ const page = async ({params}:{params:any}) => {
       <div >
       <h1 className='text-3xl'>{filterdata.productName}</h1>
       <p>{filterdata.detail}</p>
-      <p>{filterdata.season}</p>
+      <p className='text-xl'>{filterdata.category}</p>
       </div>
       <div className='rounded-md  grid grid-cols-2 gap-2 max-w-xs '>
         {filterdata.image.map((pic:any, index:number)=>(
@@ -49,4 +50,4 @@ const page = async ({params}:{params:any}) => {
   )
 }
 
-export default page
+export default Page

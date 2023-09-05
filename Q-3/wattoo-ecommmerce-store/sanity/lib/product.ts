@@ -40,12 +40,19 @@ export const product = {
         defineField({
             name: 'productType',
             title: 'Product Type',
-            type: "reference",
-            to: [
-                {
-                    type:'productType'
-                }
-            ]
+            type: "string",
+            options:{
+                list:[
+                    {title:'Shirt',value: 'Shirt'},
+                    {title:'pent',value: 'pent'},
+                    {title:'trouser',value: 'trouser'},
+                    {title:'Pajma',value: 'Pajma'},
+                    {title:'Kurta',value: 'Kurta'},
+                    {title:'top',value: 'top'},
+                    {title:'short',value: 'short'},
+                    {title:'dress',value: 'dress'},
+                ]
+            }
         }),
         defineField({
             name:'size',
@@ -76,12 +83,16 @@ export const product = {
             {
                 name:'category',
                 title:'Product Category',
-                type:'reference',
-                to:[
-                    {
-                        type:'category'
-                    }
-                ]
+                type:'string',
+                options:{
+                    list:[
+                        {title: 'Male', value:'Male'},
+                        {title: 'Female', value:'Female'},
+                        {title: 'Kids', value: 'Kids'},
+                    ]
+                }
+            
+            
             }
         ),
         {

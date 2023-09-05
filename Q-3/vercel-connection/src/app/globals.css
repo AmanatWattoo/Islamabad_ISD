@@ -1,9 +1,0 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Roboto+Slab&display=swap');
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-@layer base {
-  h1{
-    @apply text-6xl sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl
-  }
- }

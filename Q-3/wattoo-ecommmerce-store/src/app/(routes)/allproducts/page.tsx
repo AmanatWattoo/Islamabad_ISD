@@ -20,7 +20,7 @@ const AllProducts = async () => {
           </div>
           <h1 className="text-xl font-semibold mb-2">{product.productName}</h1>
           <p>{product.detail}</p>
-          <p className="text-gray-600 mb-2">{product.productType.name}</p>
+          <p className="text-gray-600 mb-2">{product.productType}</p>
           <div className="flex space-x-2 mb-2">
             <p className="font-bold text-green-500">Stock Available</p>
             <p>{product.Quantity}</p>
