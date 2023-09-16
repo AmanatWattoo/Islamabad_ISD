@@ -11,18 +11,28 @@ export const Navbar:navDataType[] =[
         isdrop: false,
 },
 {
-    title:"Mechanical",
-    href:"/Mechanical",
+    title:"Electronics",
+    href:"/Electronics",
     isdrop: true,
     dropdata: [
         {
-            title:"Electrical",
-            href:"/Electronic",
+            title:"Washing Machine",
+            href:"/Washing_Machine",
             isdrop: false,
         },
         {
-            title:"Top",
-            href:"/Electronic",
+            title:"Coffee maker",
+            href:"/Coffee_Maker",
+            isdrop: false,
+        },
+        {
+            title:"oven",
+            href:"/oven",
+            isdrop: false,
+        },
+        {
+            title:"Mixer",
+            href:"/Mixer",
             isdrop: false,
         }
     ]
@@ -30,7 +40,14 @@ export const Navbar:navDataType[] =[
 {
     title:"Agriclature",
     href:"/Agriclature",
-    isdrop: false,
+    isdrop: true,
+    dropdata: [
+        {
+            title:"Tractor",
+            href:"/Tractor",
+            isdrop: false,
+        }
+    ]
 },
 {
     title:"About",
