@@ -31,7 +31,7 @@ export const FooterData: FooterDataType[] = [
     name: 'Whatsapp',
     description: 'Join us on Whatsapp',
     icon: FaWhatsapp,
-    url: 'https://wa.me/2348030000000',
+    url: 'https://wa.me/+923156535123',
   },
   // You can add more data
 ];
